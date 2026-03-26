@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using ExamenUnidadDos.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExamenUnidadDos.Data
 {
@@ -10,7 +10,6 @@ namespace ExamenUnidadDos.Data
         }
 
         public DbSet<PersonEntity> Persons { get; set; }
-
         public DbSet<CountryEntity> Countries { get; set; }
     }
 }

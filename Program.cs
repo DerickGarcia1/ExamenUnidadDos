@@ -1,21 +1,18 @@
 using ExamenUnidadDos.Data;
+using ExamenUnidadDos.Services.Persons;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
-using ExamenUnidadDos.Services.Persons;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-
-// OpenAPI + Scalar
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<IPersonService, PersonService>();
-
-// DbContext (SQLite)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPersonService, PersonService>();
 
 var app = builder.Build();
 

@@ -1,0 +1,4 @@
+name: DESARROLLO
+variables:
+  - name: PATH_URL
+    value: http://localhost:5297/api
